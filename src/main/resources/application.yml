@@ -14,7 +14,7 @@ spring:
     bootstrap-hosts: localhost
     port: 8091
     bucket:
-      name: practice
+      name: stockCouch
       password: password
     
 
