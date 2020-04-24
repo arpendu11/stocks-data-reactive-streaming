@@ -14,8 +14,6 @@ import reactor.core.publisher.Flux;
 @N1qlPrimaryIndexed
 @ViewIndexed(designDoc = "stockCouch")
 public interface StocksCouchbaseRepository extends ReactiveCouchbaseRepository<StockCouch, Serializable> {
-	
-//	String DESIGN_DOCUMENT = "stockcouch";
 
 	@Query("select META().id AS _ID, META().cas AS _CAS, * from #{#n1ql.bucket} where profession = $1")
 	Flux<StockCouch> findByProfession(String profession);
